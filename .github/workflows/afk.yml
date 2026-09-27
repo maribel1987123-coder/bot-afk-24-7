@@ -1,0 +1,24 @@
+Nombre: Bot NPC de Minecraft 24/7
+
+en:
+  empujar:
+    ramas: [ principal ]
+  flowwork_dispatch: # Permite encender el NPC de forma manual desde el panel web
+
+empleos:
+  bot de ejecución:
+    runs-on: ubuntu-latest
+    pasos:
+    - nombre: Clonar repositorio
+      Usos: acciones/checkout@v4
+
+    - nombre: Configurar Node.js
+      usos: actions/setup-node@v4
+      con:
+        versión del nodo: 18
+
+    - nombre: Instalar dependencias de Mineflayer
+      ejecutar: npm install mineflayer
+
+    - nombre: Ejecutar script del NPC
+      ejecutar: node bot.js
